@@ -22,6 +22,7 @@ function App() {
       const response = await fetch('https://roc8l2apiurl.onrender.com/api/books');
       const data = await response.json();
       setBooks(data);
+      console.log(data);
     } catch (error) {
       console.error('Error fetching books:', error);
     }
@@ -51,7 +52,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`https://roc8l2apiurl.onrender.com/delete-book/${id}`, {
+      const response = await fetch(`https://roc8l2apiurl.onrender.com/api/delete-book/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
